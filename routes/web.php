@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PusherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pusher', [PusherController::class, 'index'])->name('pusher');
+Route::post('/change', [PusherController::class, 'change'])->name('change');
+Route::get('/color', [PusherController::class, 'color'])->name('color');
